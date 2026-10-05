@@ -1,0 +1,2 @@
+test_images,test_designs,identification_queries,Recall@1,Recall@5,Recall@10,verification_pairs,positive_pairs,negative_pairs,ROC_AUC,EER,TAR@FAR1%,TAR@FAR0.1%
+14,4,14,1.0,1.0,1.0,91,22,69,1.0,0.0,1.0,1.0

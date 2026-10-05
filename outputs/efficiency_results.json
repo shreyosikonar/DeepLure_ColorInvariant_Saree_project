@@ -1,0 +1,10 @@
+{
+  "device": "cpu",
+  "parameters": 11570496,
+  "trainable_parameters": 11570496,
+  "flops_per_image": 3627909120,
+  "gflops_per_image": 3.62790912,
+  "embedding_dimension": 256,
+  "embedding_size_kb": 1.0,
+  "latency_ms_per_image": 130.99913334784407
+}

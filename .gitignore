@@ -1,0 +1,31 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Raw/private datasets
+data/RAW/
+
+# Model checkpoints
+*.pt
+*.pth
+*.pkl
+
+# Generated/cache files
+*.log
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
