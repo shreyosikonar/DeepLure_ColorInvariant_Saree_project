@@ -49,7 +49,7 @@ Total	18	59
 Random seed: 42
 The test designs are therefore not present in the training split.
 # Preprocessing
-# # Training
+#  Training
 - Resize to 256
 - RandomResizedCrop to 224×224
 - Random horizontal flip
@@ -57,7 +57,7 @@ The test designs are therefore not present in the training split.
 - Random grayscale, probability 0.35
 - Gaussian blur
 - ImageNet normalization
-# # Evaluation
+#  Evaluation
 - Resize to 224×224
 - Tensor conversion
 - ImageNet normalization
@@ -100,16 +100,16 @@ TAR @ FAR 1%	1.0000
 TAR @ FAR 0.1%	1.0000
 
 # Efficiency
-Efficiency was measured using:
-python .\scripts\efficiency_code.py
-Metric	Result
-Device	CPU
-Parameters	11,570,496
-Trainable parameters	11,570,496
-FLOPs / image	3.628 GFLOPs
-Embedding dimension	256
-Embedding size	1.00 KB
-Average latency	131 ms/image
+Efficiency was measured using:- python .\scripts\efficiency_code.py
+
+# Metric	Result
+Device:	CPU
+Parameters:	11,570,496
+Trainable parameters:	11,570,496
+FLOPs / image:	3.628 GFLOPs
+Embedding dimension: 256
+Embedding size:	1.00 KB
+Average latency: 131 ms/image
 
 # Results are saved to:
 outputs/efficiency_results.json
@@ -198,6 +198,8 @@ EXPERIMENT_PLAN.md	Detailed experiment plan and results
 Create and activate a Python environment, then install the required packages:
 pip install -r requirements.txt
 The project uses PyTorch and related Python packages for image processing, model training and evaluation.
+
+
 # Running the Project
 1. # Prepare / update the manifest
 Use the project scripts for candidate generation, labeling and splitting when rebuilding the dataset.
@@ -215,7 +217,7 @@ python .\scripts\evaluate_metric.py
 - EER
 - TAR@FAR 1%
 - TAR@FAR 0.1%
-4. # Measure efficiency
+4. Measure efficiency
 python .\scripts\efficiency_code.py
 # Limitations
 The current results should be interpreted as a prototype experiment.
