@@ -26,7 +26,7 @@ Embedding Head
 L2-normalized 256-D embedding
     ↓
 Cosine Similarity
-
+```
 The model is trained using Supervised Contrastive Loss so that images belonging to the same design are closer in embedding space while different designs are separated.
 Color-invariance is encouraged using ColorJitter, random grayscale, and Gaussian blur.
 # Dataset
@@ -167,7 +167,7 @@ DeepLure_ColorInvariant_Saree_project/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
-
+```
 # Main folders
 - .vscode/ — VS Code project configuration.
 - configs/ — experiment configuration files.
