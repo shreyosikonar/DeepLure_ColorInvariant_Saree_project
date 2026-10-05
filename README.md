@@ -3,10 +3,10 @@ A PyTorch-based metric-learning system for recognizing saree surface designs ind
 Objective
 The goal is to identify the same saree surface design even when the saree appears in different colors, while distinguishing different motifs with similar colors.
 # The system supports:
-- Design identification / image retrieval
-- Image-pair verification
-- Compact 256-dimensional design embeddings
-- Efficiency measurement
+-Design identification / image retrieval
+-Image-pair verification
+-Compact 256-dimensional design embeddings
+-Efficiency measurement
 # Approach
 The project uses a pretrained ResNet18 backbone followed by a 256-dimensional embedding head.
 ```text
@@ -33,9 +33,9 @@ Color-invariance is encouraged using ColorJitter, random grayscale, and Gaussian
 The available handloom image set contains 165 JPG images.
 An additional archive dataset contains broad categories such as Banarasi, Bandhani, Ikat and Pichwai. These broad categories were not used as fine-grained design IDs because the task requires surface-design identity.
 # For the current experiment:
-- Labeled images: 59
-- Design groups: 18
-- Unlabeled images: 106
+-Labeled images: 59
+-Design groups: 18
+-Unlabeled images: 106
 The expanded labels were partly derived from high-similarity candidate pairs. They should therefore be treated as candidate-derived/heuristic labels, not as a fully manually verified ground-truth annotation.
 # Data privacy
 Do not commit proprietary/source datasets to a public repository. Follow the assignment instructions regarding proprietary DeepLure data and deletion after the exercise.
@@ -179,19 +179,19 @@ DeepLure_ColorInvariant_Saree_project/
 
 # Important files
  ## File	Purpose
-scripts/train_metric.py	Trains the color-invariant metric-learning model
-scripts/evaluate_metric.py	Evaluates identification and verification
-scripts/efficiency_code.py	Measures parameters, FLOPs, embedding size and latency
-scripts/find_candidate_groups.py	Finds visually similar candidate image pairs
-scripts/create_initial_labels.py	Creates initial design labels
-scripts/expand_design_labels.py	Expands candidate-derived design labels
-scripts/make_split.py	Creates the design-level train/validation/test split
-data/processed/manifest.csv	Final dataset split manifest
-outputs/color_invariant_resnet18_best.pt	Trained model checkpoint
-outputs/evaluation_results.csv	Evaluation results
-outputs/efficiency_results.json	Efficiency measurements
-APPROACH_NOTE.md	Short technical approach
-EXPERIMENT_PLAN.md	Detailed experiment plan and results
+-scripts/train_metric.py	Trains the color-invariant metric-learning model
+-scripts/evaluate_metric.py	Evaluates identification and verification
+-scripts/efficiency_code.py	Measures parameters, FLOPs, embedding size and latency
+-scripts/find_candidate_groups.py	Finds visually similar candidate image pairs
+-scripts/create_initial_labels.py	Creates initial design labels
+-scripts/expand_design_labels.py	Expands candidate-derived design labels
+-scripts/make_split.py	Creates the design-level train/validation/test split
+-data/processed/manifest.csv	Final dataset split manifest
+-outputs/color_invariant_resnet18_best.pt	Trained model checkpoint
+-outputs/evaluation_results.csv	Evaluation results
+-outputs/efficiency_results.json	Efficiency measurements
+-APPROACH_NOTE.md	Short technical approach
+-EXPERIMENT_PLAN.md	Detailed experiment plan and results
 
 
 # Installation
@@ -201,13 +201,13 @@ The project uses PyTorch and related Python packages for image processing, model
 
 
 # Running the Project
-1. # Prepare / update the manifest
+ # Prepare / update the manifest
 Use the project scripts for candidate generation, labeling and splitting when rebuilding the dataset.
-2. # Train
+ # Train
 python .\scripts\train_metric.py
 The trained checkpoint is saved as:
 outputs/color_invariant_resnet18_best.pt
-3. # Evaluate
+ # Evaluate
 python .\scripts\evaluate_metric.py
 ## This reports:
 - Recall@1
@@ -217,7 +217,7 @@ python .\scripts\evaluate_metric.py
 - EER
 - TAR@FAR 1%
 - TAR@FAR 0.1%
-4. Measure efficiency
+ # Measure efficiency
 python .\scripts\efficiency_code.py
 # Limitations
 The current results should be interpreted as a prototype experiment.
