@@ -3,10 +3,10 @@ A PyTorch-based metric-learning system for recognizing saree surface designs ind
 Objective
 The goal is to identify the same saree surface design even when the saree appears in different colors, while distinguishing different motifs with similar colors.
 # The system supports:
--Design identification / image retrieval
--Image-pair verification
--Compact 256-dimensional design embeddings
--Efficiency measurement
+- Design identification / image retrieval
+- Image-pair verification
+- Compact 256-dimensional design embeddings
+- Efficiency measurement
 # Approach
 The project uses a pretrained ResNet18 backbone followed by a 256-dimensional embedding head.
 ```text
@@ -33,20 +33,20 @@ Color-invariance is encouraged using ColorJitter, random grayscale, and Gaussian
 The available handloom image set contains 165 JPG images.
 An additional archive dataset contains broad categories such as Banarasi, Bandhani, Ikat and Pichwai. These broad categories were not used as fine-grained design IDs because the task requires surface-design identity.
 # For the current experiment:
--Labeled images: 59
--Design groups: 18
--Unlabeled images: 106
+- Labeled images: 59
+- Design groups: 18
+- Unlabeled images: 106
 The expanded labels were partly derived from high-similarity candidate pairs. They should therefore be treated as candidate-derived/heuristic labels, not as a fully manually verified ground-truth annotation.
 # Data privacy
 Do not commit proprietary/source datasets to a public repository. Follow the assignment instructions regarding proprietary DeepLure data and deletion after the exercise.
 # Train / Validation / Test Split
 The split is performed by design, rather than randomly by image, to reduce design leakage.
 Split	Designs	Images
-Train	12	41
-Validation	2	4
-Test	4	14
-Total	18	59
-Random seed: 42
+- Train	12	41
+- Validation	2	4
+- Test	4	14
+- Total	18	59
+- Random seed: 42
 The test designs are therefore not present in the training split.
 # Preprocessing
 #  Training
@@ -63,18 +63,18 @@ The test designs are therefore not present in the training split.
 - ImageNet normalization
 The color transformations are specifically intended to reduce dependence on color palette.
 # Training Configuration
-Parameter	Value
-Framework	PyTorch
-Backbone	ResNet18
-Loss	Supervised Contrastive Loss
-Temperature	0.07
-Sampling	P=4, K=4
-Embedding dimension	256
-Optimizer	AdamW
-Learning rate	1e-4
-Weight decay	1e-4
-Epochs	20
-Device	CPU
+- Parameter	Value
+- Framework	PyTorch
+- Backbone	ResNet18
+- Loss	Supervised Contrastive Loss
+- Temperature	0.07
+- Sampling	P=4, K=4
+- Embedding dimension	256
+- Optimizer	AdamW
+- Learning rate	1e-4
+- Weight decay	1e-4
+- Epochs	20
+- Device	CPU
 
 Training loss decreased from 2.9510 at epoch 1 to 2.0359 at epoch 20.
 # Evaluation
@@ -179,19 +179,19 @@ DeepLure_ColorInvariant_Saree_project/
 
 # Important files
  ## File	Purpose
--scripts/train_metric.py	Trains the color-invariant metric-learning model
--scripts/evaluate_metric.py	Evaluates identification and verification
--scripts/efficiency_code.py	Measures parameters, FLOPs, embedding size and latency
--scripts/find_candidate_groups.py	Finds visually similar candidate image pairs
--scripts/create_initial_labels.py	Creates initial design labels
--scripts/expand_design_labels.py	Expands candidate-derived design labels
--scripts/make_split.py	Creates the design-level train/validation/test split
--data/processed/manifest.csv	Final dataset split manifest
--outputs/color_invariant_resnet18_best.pt	Trained model checkpoint
--outputs/evaluation_results.csv	Evaluation results
--outputs/efficiency_results.json	Efficiency measurements
--APPROACH_NOTE.md	Short technical approach
--EXPERIMENT_PLAN.md	Detailed experiment plan and results
+- scripts/train_metric.py	Trains the color-invariant metric-learning model
+- scripts/evaluate_metric.py	Evaluates identification and verification
+- scripts/efficiency_code.py	Measures parameters, FLOPs, embedding size and latency
+- scripts/find_candidate_groups.py	Finds visually similar candidate image pairs
+- scripts/create_initial_labels.py	Creates initial design labels
+- scripts/expand_design_labels.py	Expands candidate-derived design labels
+- scripts/make_split.py	Creates the design-level train/validation/test split
+- data/processed/manifest.csv	Final dataset split manifest
+- outputs/color_invariant_resnet18_best.pt	Trained model checkpoint
+- outputs/evaluation_results.csv	Evaluation results
+- outputs/efficiency_results.json	Efficiency measurements
+- APPROACH_NOTE.md	Short technical approach
+- EXPERIMENT_PLAN.md	Detailed experiment plan and results
 
 
 # Installation
@@ -237,6 +237,8 @@ On the current small design-disjoint test set, the model achieved:
 - 3.628 GFLOPs/image
 - 131 ms/image CPU latency
 - 256-D embeddings
+
+
 These results are encouraging for the prototype, while larger manually verified datasets are needed to establish generalization.
 Assignment Compliance
 The implementation uses PyTorch, provides an end-to-end training/evaluation pipeline, documents preprocessing and training choices, reports identification and verification results, and includes model-efficiency measurements.
