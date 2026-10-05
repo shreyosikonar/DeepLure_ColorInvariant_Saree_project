@@ -9,6 +9,7 @@ The goal is to identify the same saree surface design even when the saree appear
 - Efficiency measurement
 # Approach
 The project uses a pretrained ResNet18 backbone followed by a 256-dimensional embedding head.
+```text
 Saree Image
     ↓
 224×224 preprocessing
@@ -114,27 +115,19 @@ Average latency	131 ms/image
 outputs/efficiency_results.json
 
 # Project Structure
+```text
 DeepLure_ColorInvariant_Saree_project/
-│
-├── .vscode/
-│   ├── c_cpp_properties.json
-│   ├── launch.json
-│   └── settings.json
 │
 ├── configs/
 │   └── default.yaml
 │
 ├── data/
-│   ├── processed/
-│   │   ├── design_lebel.csv
-│   │   ├── expanded_design_labels.csv
-│   │   ├── initial_design_labels.csv
-│   │   ├── manifest.csv
-│   │   └── verified_pairs.csv
-│   │
-│   └── RAW/
-│       ├── archive/
-│       └── handloom_sarees-20261005T114814Z-1-001/
+│   └── processed/
+│       ├── design_lebel.csv
+│       ├── expanded_design_labels.csv
+│       ├── initial_design_labels.csv
+│       ├── manifest.csv
+│       └── verified_pairs.csv
 │
 ├── outputs/
 │   ├── candidate_pair_sheet.jpg
@@ -143,13 +136,11 @@ DeepLure_ColorInvariant_Saree_project/
 │   ├── candidates_1.jpg
 │   ├── candidates_2.jpg
 │   ├── candidates_3.jpg
-│   ├── color_invariant_resnet18_best.pt
 │   ├── efficiency_results.json
 │   ├── evaluation_results.csv
 │   └── handloom_contact_sheet.jpg
 │
 ├── scripts/
-│   ├── __pycache__/
 │   ├── build_manifest.py
 │   ├── create_initial_labels.py
 │   ├── efficiency_code.py
@@ -164,7 +155,6 @@ DeepLure_ColorInvariant_Saree_project/
 │   └── train_metric.py
 │
 ├── src/
-│   ├── __pycache__/
 │   ├── __init__.py
 │   ├── data.py
 │   ├── evaluate.py
@@ -175,7 +165,8 @@ DeepLure_ColorInvariant_Saree_project/
 ├── APPROACH_NOTE.md
 ├── EXPERIMENT_PLAN.md
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── .gitignore
 
 # Main folders
 - .vscode/ — VS Code project configuration.
