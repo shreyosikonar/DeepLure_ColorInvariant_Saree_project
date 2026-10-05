@@ -41,12 +41,14 @@ The expanded labels were partly derived from high-similarity candidate pairs. Th
 Do not commit proprietary/source datasets to a public repository. Follow the assignment instructions regarding proprietary DeepLure data and deletion after the exercise.
 # Train / Validation / Test Split
 The split is performed by design, rather than randomly by image, to reduce design leakage.
-Split	Designs	Images
-- Train	12	41
-- Validation	2	4
-- Test	4	14
-- Total	18	59
+ Split	    Designs	 Images
+- Train	      12	   41
+- Validation   2	   4
+- Test	       4	  14
+- Total	       18	  59
 - Random seed: 42
+
+
 The test designs are therefore not present in the training split.
 # Preprocessing
 #  Training
@@ -63,27 +65,27 @@ The test designs are therefore not present in the training split.
 - ImageNet normalization
 The color transformations are specifically intended to reduce dependence on color palette.
 # Training Configuration
-- Parameter	Value
-- Framework	PyTorch
-- Backbone	ResNet18
-- Loss	Supervised Contrastive Loss
-- Temperature	0.07
-- Sampling	P=4, K=4
-- Embedding dimension	256
-- Optimizer	AdamW
-- Learning rate	1e-4
-- Weight decay	1e-4
-- Epochs	20
-- Device	CPU
+ Parameter	Value
+- Framework:PyTorch
+- Backbone:	ResNet18
+- Loss:	Supervised Contrastive Loss
+- Temperature:	0.07
+- Sampling:	P=4, K=4
+- Embedding dimension:	256
+- Optimizer: AdamW
+- Learning rate: 1e-4
+- Weight decay:	1e-4
+- Epochs:	20
+- Device:	CPU
 
 Training loss decreased from 2.9510 at epoch 1 to 2.0359 at epoch 20.
 # Evaluation
 Identification
 Each test image is compared with the other test images using cosine similarity.
 Metric	Result
-Recall@1	1.0000
-Recall@5	1.0000
-Recall@10	1.0000
+- Recall@1:	1.0000
+- Recall@5:	1.0000
+- Recall@10:	1.0000
 
 # Test set:
 - 14 images
@@ -94,10 +96,10 @@ All test-image pairs were evaluated.
 - Positive pairs: 22
 - Negative pairs: 69
 # Metric	Result
-ROC-AUC	1.0000
-EER	0.0000
-TAR @ FAR 1%	1.0000
-TAR @ FAR 0.1%	1.0000
+- ROC-AUC:	1.0000
+- EER:	0.0000
+- TAR @ FAR 1:	1.0000
+- TAR @ FAR 0.1%:	1.0000
 
 # Efficiency
 Efficiency was measured using:- python .\scripts\efficiency_code.py
