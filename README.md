@@ -9,6 +9,8 @@ The goal is to identify the same saree surface design even when the saree appear
 - Efficiency measurement
 # Approach
 The project uses a pretrained ResNet18 backbone followed by a 256-dimensional embedding head.
+
+
 Saree Image
     ↓
 224×224 preprocessing
@@ -48,7 +50,7 @@ Total	18	59
 Random seed: 42
 The test designs are therefore not present in the training split.
 # Preprocessing
-# # Training
+#  Training
 - Resize to 256
 - RandomResizedCrop to 224×224
 - Random horizontal flip
@@ -56,7 +58,7 @@ The test designs are therefore not present in the training split.
 - Random grayscale, probability 0.35
 - Gaussian blur
 - ImageNet normalization
-# # Evaluation
+#  Evaluation
 - Resize to 224×224
 - Tensor conversion
 - ImageNet normalization
@@ -114,6 +116,8 @@ Average latency	131 ms/image
 outputs/efficiency_results.json
 
 # Project Structure
+
+
 DeepLure_ColorInvariant_Saree_project/
 │
 ├── .vscode/
@@ -208,13 +212,13 @@ Create and activate a Python environment, then install the required packages:
 pip install -r requirements.txt
 The project uses PyTorch and related Python packages for image processing, model training and evaluation.
 # Running the Project
-1. # Prepare / update the manifest
+1. Prepare / update the manifest
 Use the project scripts for candidate generation, labeling and splitting when rebuilding the dataset.
-2. # Train
+2. Train
 python .\scripts\train_metric.py
 The trained checkpoint is saved as:
 outputs/color_invariant_resnet18_best.pt
-3. # Evaluate
+3. Evaluate
 python .\scripts\evaluate_metric.py
 ## This reports:
 - Recall@1
@@ -244,6 +248,8 @@ On the current small design-disjoint test set, the model achieved:
 - 3.628 GFLOPs/image
 - 131 ms/image CPU latency
 - 256-D embeddings
+
+
 These results are encouraging for the prototype, while larger manually verified datasets are needed to establish generalization.
 Assignment Compliance
 The implementation uses PyTorch, provides an end-to-end training/evaluation pipeline, documents preprocessing and training choices, reports identification and verification results, and includes model-efficiency measurements.
