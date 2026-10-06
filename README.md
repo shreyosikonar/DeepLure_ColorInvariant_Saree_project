@@ -36,6 +36,8 @@ An additional archive dataset contains broad categories such as Banarasi, Bandha
 - Labeled images: 59
 - Design groups: 18
 - Unlabeled images: 106
+
+
 The expanded labels were partly derived from high-similarity candidate pairs. They should therefore be treated as candidate-derived/heuristic labels, not as a fully manually verified ground-truth annotation.
 # Data privacy
 Do not commit proprietary/source datasets to a public repository. Follow the assignment instructions regarding proprietary DeepLure data and deletion after the exercise.
